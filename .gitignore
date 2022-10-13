@@ -1,8 +1,0 @@
-.venv
-venv
-.idea
-*.pyc
-0*.py
-__pycache__
-config/local_settings.py
-local_requirements.txt

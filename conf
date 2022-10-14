@@ -1,9 +1,9 @@
 export SECRET_KEY='django-insecure-ao6_y5(7531np^#uh-nc&gd$(zcd0%#p*x!!o=3#@1^i)ba$q3'
 export DJANGO_SETTINGS_MODULE="config.settings"
-export DATABASE_NAME="codeblog_db"
-export DATABASE_USER="codeblog_user"
-export DATABASE_PASSWORD="codeblog_password"
-export DATABASE_HOST="127.0.0.1"
+export DATABASE_NAME="d4mjba0sd26uol"
+export DATABASE_USER="oveepefhdmfybo"
+export DATABASE_PASSWORD="69f2d3e6c8149488fe8dece4c453408eb2274ad7e26513ccfd470db6e2535990"
+export DATABASE_HOST="ec2-3-220-207-90.compute-1.amazonaws.com"
 export DATABASE_PORT="5432"
 export MEDIA_URL="/media/codeblog/media/"
 export STATIC_URL="/web/codeblog/static/"

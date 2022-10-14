@@ -17,6 +17,9 @@ class ArticleViewSet(ModelViewSet):
     queryset = Article.objects.all()
     permission_classes = [IsAuthenticatedOrReadOnly, IsAuthorOrReadOnly]
     
+    def get_queryset(self):
+        return Article.objects.filter(is_reviewed=True) 
+    
     def perform_create(self, serializer):
         author = get_object_or_404(User, id=self.request.user.id)
         serializer.save(author = author)

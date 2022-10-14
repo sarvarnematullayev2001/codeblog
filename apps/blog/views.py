@@ -53,7 +53,7 @@ class CommentListAPIView(generics.ListAPIView):
 
 class CommentCreateAPIView(generics.CreateAPIView):
     serializer_class = CommentCreateSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticatedOrReadOnly]
     
     def perform_create(self, serializer):
         article = get_object_or_404(Article, pk=self.kwargs['pk'])

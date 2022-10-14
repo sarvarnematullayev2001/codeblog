@@ -1,6 +1,6 @@
 # Rest Framework
 from rest_framework.views import APIView
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework import generics
 
 
@@ -38,6 +38,7 @@ class LoginAPIView(APIView):
 class ProfileAPIView(generics.RetrieveUpdateAPIView):
     
     serializer_class = UserSerializer
+    permission_classes = [IsAuthenticated]
     
     def get_object(self):
         return get_object_or_404(User, pk=self.request.user.id)

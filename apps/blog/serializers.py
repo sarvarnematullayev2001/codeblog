@@ -12,6 +12,7 @@ class ArticleCodeSerializer(serializers.ModelSerializer):
     class Meta:
         model = ArticleCode
         fields = '__all__'
+        read_only_fields = ['article']
 
 
 class ArticleSerializer(serializers.ModelSerializer):

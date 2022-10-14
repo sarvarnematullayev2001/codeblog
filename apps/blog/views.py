@@ -1,6 +1,6 @@
 # Rest Framework
 from rest_framework.viewsets import ModelViewSet
-from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly, AllowAny
 from rest_framework import generics
 
 # Project
@@ -45,6 +45,7 @@ class ArticleCodeViewSet(ModelViewSet):
 
 class CommentListAPIView(generics.ListAPIView):
     serializer_class = CommentListSerializer
+    permission_classes = [AllowAny]
     
     def get_queryset(self):
         article = get_object_or_404(Article, pk=self.kwargs['pk'])
@@ -53,7 +54,7 @@ class CommentListAPIView(generics.ListAPIView):
 
 class CommentCreateAPIView(generics.CreateAPIView):
     serializer_class = CommentCreateSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAuthenticated]
     
     def perform_create(self, serializer):
         article = get_object_or_404(Article, pk=self.kwargs['pk'])

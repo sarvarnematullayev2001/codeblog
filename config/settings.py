@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'easy_thumbnails',
     'corsheaders',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -165,6 +166,10 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.FormParser',
         'rest_framework.parsers.MultiPartParser',
     ],
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.SearchFilter',
+    ]
 }
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

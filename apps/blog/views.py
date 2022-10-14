@@ -16,6 +16,7 @@ from django.shortcuts import get_object_or_404
 class ArticleViewSet(ModelViewSet):
     queryset = Article.objects.all()
     permission_classes = [IsAuthenticatedOrReadOnly, IsAuthorOrReadOnly]
+    search_fields = ['tags', 'title', 'author__first_name', 'author__last_name']
     
     def get_queryset(self):
         return Article.objects.filter(is_reviewed=True) 

@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'corsheaders',
     'django_filters',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
